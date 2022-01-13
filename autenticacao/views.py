@@ -28,6 +28,10 @@ def cadastro(request):
             messages.add_message(request, constants.ERROR, 'Já existe um usuário cadastrado no sistema!')
             return redirect('/auth/cadastro')
 
+        if len(senha) < 8 or len(senha) > 12:
+            messages.add_message(request, constants.ERROR, 'Sua senha deve ser maior que 8 e menor que 12 caractéres!')
+            return redirect('/auth/cadastro')
+
         try:
             user = User.objects.create_user(username=username, 
                                             email=email, 
