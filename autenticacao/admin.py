@@ -1,3 +1,4 @@
 from django.contrib import admin
 
-# Register your models here.
+# usuario: br
+# senha: 123456789
